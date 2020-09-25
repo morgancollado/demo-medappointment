@@ -1,0 +1,12 @@
+<%= form_for(appointment) do |f| %>
+
+    <%= f.datetime_local_field :appointment_time %>
+    <%= f.label :location %>
+    <%= f.text_field :location %>
+     <%= f.label :doctor_id %>
+    <%= f.text_field :doctor_id %>
+     <%= f.label :patient_id %>
+    <%= f.text_field :patient_id %>
+    <%= f.submit  %>
+
+<% end %>

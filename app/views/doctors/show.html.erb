@@ -1,0 +1,5 @@
+<h1><%= @doctor.username %></h1>
+<h2><%= @doctor.specialty %></h2>
+<h3><%= @doctor.email %></h3>
+<h4><%= @doctor.rating %></h4>
+<%= button_to "delete", doctor_path(@doctor), method: :delete%>

@@ -1,0 +1,5 @@
+<%= @appointment.appointment_time %>
+<%= @appointment.location %>
+<%= @appointment.doctor_id %>
+<%= @appointment.patient_id %>
+<%= button_to "delete", appointment_path(@appointment), method: :delete%>

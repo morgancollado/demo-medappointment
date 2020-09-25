@@ -1,0 +1,15 @@
+<%= form_for doctor do |f| %>
+    <%= f.label :username %>
+    <%= f.text_field :username %>
+
+    <%= f.label :specialty %>
+    <%= f.text_field :specialty %>
+
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+
+    <%= f.label "password" %>
+    <%= f.text_field :password_digest %>
+
+    <%= f.submit %>
+<% end %>
