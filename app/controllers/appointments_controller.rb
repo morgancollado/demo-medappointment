@@ -15,7 +15,8 @@ class AppointmentsController < ApplicationController
     end 
 
     def create 
-        if @appointment = Appointment.create!(appointment_params(:appointment_time, :location, :doctor_id, :patient_id))
+        @appointment = Appointment.new(appointment_params(:appointment_time, :location, :doctor_id, :patient_id))
+        if @appointment.save
         
         redirect_to appointment_path(@appointment)
         else 
