@@ -1,4 +1,14 @@
 <%= form_for doctor do |f| %>
+<% if doctor.errors.any? %>
+    <div id="error_explanation">
+      <h2>There were some errors:</h2>
+      <ul>
+        <% doctor.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
     <%= f.label :username %>
     <%= f.text_field :username %>
 
@@ -9,7 +19,7 @@
     <%= f.text_field :email %>
 
     <%= f.label "password" %>
-    <%= f.text_field :password_digest %>
+    <%= f.password_field :password%>
 
     <%= f.submit %>
 <% end %>

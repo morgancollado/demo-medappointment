@@ -14,7 +14,8 @@ class DoctorsController < ApplicationController
     end 
 
     def create 
-        if @doctor = Doctor.create!(doctor_params(:username, :specialty, :email, :password_digest, :rating))
+        @doctor = Doctor.new(doctor_params(:username, :specialty, :email, :password_digest))
+        if @doctor.save
         
         redirect_to doctor_path(@doctor)
         else 
@@ -27,7 +28,7 @@ class DoctorsController < ApplicationController
     end 
 
     def update 
-        if @doctor = Doctor.update!(doctor_params(:username, :specialty, :email, :password_digest, :rating))
+        if @doctor = Doctor.update!(doctor_params(:username, :specialty, :email, :password_digest))
         
         redirect_to doctor_path(@doctor)
         else 
